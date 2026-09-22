@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para mi wawita 🌻</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #fff9df;
+    color: #5c4a16;
+}
+
+/* FLORES DECORATIVAS */
+.flower {
+    position: fixed;
+    font-size: 35px;
+    z-index: 10;
+    animation: float 4s ease-in-out infinite;
+}
+
+.f1 { top: 15px; left: 15px; }
+.f2 { top: 20px; right: 20px; animation-delay: 1s; }
+.f3 { bottom: 20px; left: 20px; animation-delay: 2s; }
+.f4 { bottom: 15px; right: 15px; animation-delay: 3s; }
+
+@keyframes float {
+    0%,100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+/* PANTALLA DE CLAVE */
+#login {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    background:
+        radial-gradient(circle at top left, #ffe680, transparent 35%),
+        radial-gradient(circle at bottom right, #ffd84d, transparent 30%),
+        #fff9df;
+}
+
+.login-box {
+    max-width: 450px;
+    width: 100%;
+    text-align: center;
+    background: rgba(255,255,255,0.82);
+    padding: 45px 30px;
+    border-radius: 30px;
+    box-shadow: 0 10px 35px rgba(130,100,0,0.15);
+}
+
+.login-box h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.login-box p {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.flower-big {
+    font-size: 65px;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e5bd27;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 18px;
+    margin: 15px 0;
+    outline: none;
+    background: #fffdf3;
+}
+
+button {
+    border: none;
+    background: #e5b900;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 25px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: #c99e00;
+}
+
+#error {
+    color: #b52b2b;
+    margin-top: 12px;
+    display: none;
+}
+
+/* CONTENIDO */
+#regalo {
+    display: none;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    background:
+        linear-gradient(rgba(255,249,220,0.72), rgba(255,249,220,0.9)),
+        radial-gradient(circle at 20% 20%, #ffd84d, transparent 25%),
+        radial-gradient(circle at 80% 80%, #f5c928, transparent 25%);
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 8vw, 70px);
+    margin: 10px 0;
+}
+
+.hero h2 {
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.sun {
+    font-size: 80px;
+    animation: sun 5s infinite ease-in-out;
+}
+
+@keyframes sun {
+    50% { transform: rotate(10deg) scale(1.05); }
+}
+
+section {
+    padding: 70px 20px;
+    max-width: 950px;
+    margin: auto;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* FOTOS */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.photo {
+    background: white;
+    padding: 10px;
+    border-radius: 18px;
+    box-shadow: 0 7px 20px rgba(100,80,0,0.12);
+}
+
+.photo img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* CARTA */
+.letter {
+    background: #fffdf1;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(100,80,0,0.12);
+    text-align: left;
+    font-size: 19px;
+    line-height: 1.9;
+}
+
+.signature {
+    text-align: right;
+    margin-top: 30px;
+    font-size: 22px;
+}
+
+/* CANCIÓN */
+.song {
+    background: #f9d84c;
+    padding: 35px;
+    border-radius: 30px;
+}
+
+.song p {
+    font-size: 20px;
+}
+
+/* FINAL */
+.final {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+    background:
+        radial-gradient(circle, #ffe477, #f4ca31);
+}
+
+.final h2 {
+    font-size: 40px;
+}
+
+.final p {
+    font-size: 22px;
+    line-height: 1.7;
+}
+
+.petals {
+    font-size: 45px;
+    margin: 20px;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px) {
+
+    .login-box {
+        padding: 35px 20px;
+    }
+
+    section {
+        padding: 55px 18px;
+    }
+
+    .letter {
+        padding: 25px;
+        font-size: 17px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- FLORES -->
+<div class="flower f1">🌻</div>
+<div class="flower f2">🌼</div>
+<div class="flower f3">🌻</div>
+<div class="flower f4">🌼</div>
+
+
+<!-- ========================= -->
+<!-- PANTALLA DE CONTRASEÑA -->
+<!-- ========================= -->
+
+<div id="login">
+
+    <div class="login-box">
+
+        <div class="flower-big">🌻</div>
+
+        <h1>Para mi wawita</h1>
+
+        <p>
+            Preparé algo especialmente para vos.
+            <br>
+            Pero antes... necesito saber si sos vos 💛
+        </p>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Ingresá la clave"
+        >
+
+        <button onclick="abrirRegalo()">
+            Abrir mi regalo 💌
+        </button>
+
+        <p id="error">
+            Mmm... esa no es la clave 👀🌻
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- REGALO -->
+<!-- ========================= -->
+
+<div id="regalo">
+
+    <!-- PORTADA -->
+
+    <div class="hero">
+
+        <div class="hero-content">
+
+            <div class="sun">☀️</div>
+
+            <p>Para mi amorcito</p>
+
+            <h1>8 meses con vos</h1>
+
+            <h2>
+                Un pequeño regalo hecho especialmente para vos 💛
+            </h2>
+
+            <p class="subtitle">
+                Porque aunque no pueda envolverte un regalo,
+                quería darte algo que pudiera guardar nuestros recuerdos.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- RECORRIDO -->
+
+    <section>
+
+        <h2>🌼 Nuestro pequeño recorrido 🌼</h2>
+
+        <p class="subtitle">
+            21 de enero de 2026
+        </p>
+
+        <p>
+            El comienzo de nosotros.
+        </p>
+
+        <p class="subtitle">
+            Y hoy...
+        </p>
+
+        <h2>💛 8 meses 💛</h2>
+
+        <p>
+            8 meses de momentos, risas, abrazos,
+            conversaciones y recuerdos que quiero seguir construyendo con vos.
+        </p>
+
+    </section>
+
+
+    <!-- FOTOS -->
+
+    <section>
+
+        <h2>📸 Nuestros recuerdos</h2>
+
+        <p class="subtitle">
+            Algunas de mis partes favoritas de nuestra historia.
+        </p>
+
+        <div class="gallery">
+
+            <!-- FOTO 1 -->
+            <div class="photo">
+                <img src="foto1.jpg" alt="Nuestro recuerdo">
+            </div>
+
+            <!-- FOTO 2 -->
+            <div class="photo">
+                <img src="foto2.jpg" alt="Nuestro recuerdo">
+            </div>
+
+            <!-- FOTO 3 -->
+            <div class="photo">
+                <img src="foto3.jpg" alt="Nuestro recuerdo">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CANCIÓN -->
+
+    <section>
+
+        <div class="song">
+
+            <h2>☀️ Nuestra canción</h2>
+
+            <p>
+                <i>Here Comes the Sun</i>
+            </p>
+
+            <p>
+                Porque algunas canciones simplemente
+                terminan teniendo una persona en mente. 💛
+            </p>
+
+            <button onclick="escucharCancion()">
+                🎵 Escuchar
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- CARTA -->
+
+    <section>
+
+        <h2>💌 Para vos, amorcito</h2>
+
+        <div class="letter">
+
+            <p>
+                Aunque no haya podido darte un presente de forma física,
+                me gustaría que este sea un regalo especial.
+            </p>
+
+            <p>
+                Te amo de forma indescriptible y quiero que lo sientas
+                de todas las formas posibles.
+            </p>
+
+            <p>
+                SOS lo mejor que me pudo haber pasado.
+            </p>
+
+            <p>
+                Gracias por estos 8 meses, por cada momento,
+                por cada sonrisa y por formar parte de mi vida.
+            </p>
+
+            <p>
+                Espero que este pequeño regalo pueda transmitirte,
+                aunque sea un poquito, todo lo que siento por vos.
+            </p>
+
+            <div class="signature">
+                Con todo mi amor ❤️<br>
+                Tu amorcito 🌻
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL -->
+
+    <div class="final">
+
+        <div>
+
+            <div class="petals">
+                🌻 🌼 🌻
+            </div>
+
+            <h2>
+                Te amo, Mati ❤️
+            </h2>
+
+            <p>
+                Feliz 8 meses, wawita.
+            </p>
+
+            <p>
+                Y feliz día de las flores amarillas 🌻
+            </p>
+
+            <p>
+                Que siempre podamos seguir encontrándonos
+                en cada primavera.
+            </p>
+
+            <div class="petals">
+                🌼 🌻 🌼
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function abrirRegalo() {
+
+    const clave = document.getElementById("password").value;
+
+    if (clave === "21/01/26") {
+
+        document.getElementById("login").style.display = "none";
+
+        document.getElementById("regalo").style.display = "block";
+
+        window.scrollTo(0,0);
+
+    } else {
+
+        document.getElementById("error").style.display = "block";
+
+    }
+}
+
+
+function escucharCancion() {
+
+    window.open(
+        "https://www.youtube.com/results?search_query=Here+Comes+the+Sun+The+Beatles",
+        "_blank"
+    );
+
+}
+
+</script>
+
+</body>
+</html>
